@@ -4,6 +4,7 @@ from app.models import Oculos, Clientes
 import io 
 from django.http import FileResponse
 from reportlab.pdfgen import canvas
+# from reportlab.lib.pagesizes import A4
 
 # Create your views here.
 def lista_produto(request):
@@ -25,13 +26,13 @@ def lista_cliente(request):
     return render(request, template_name, object, context)
 
 # def pdf(request):
-#     buffer = io.BytesIO()
-#     p = canvas.Canvas(buffer)
-#     p.drawString(100, 800, '{}.pdf')
+#     # buffer = io.BytesIO()
+#     p = canvas.Canvas('PráticaFRC.pdf', pagesize=A4)
+#     p.drawString(100, 800, '')
 #     p.showPage()
 #     p.save()
-#     buffer.seek(0)
-#     return FileResponse(request, buffer, as_attachment=True,  filename='relatório.pdf')
+#     # buffer.seek(0)
+#     # return FileResponse(request, buffer, as_attachment=True,  filename='relatório.pdf')
       
          
 # Cadastro Produto
